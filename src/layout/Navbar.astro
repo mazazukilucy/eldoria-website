@@ -31,7 +31,7 @@ const links = [
 ];
 ---
 
-<nav class="navbar">
+<nav class="navbar" data-navbar>
 
     <a
         href="/"
@@ -42,7 +42,7 @@ const links = [
 
     </a>
 
-    <div class="nav-links">
+    <div class="nav-links" id="nav-links" data-nav-panel>
 
         {
 
@@ -65,6 +65,27 @@ const links = [
         }
 
     </div>
+
+    <button
+        class="nav-toggle"
+        type="button"
+        data-nav-toggle
+        aria-controls="nav-links"
+        aria-expanded="false"
+        aria-label="Open navigation"
+    >
+
+        <span class="nav-toggle-bars" aria-hidden="true">
+
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </span>
+
+    </button>
+
+    <div class="nav-scrim" data-nav-scrim hidden></div>
 
 </nav>
 
@@ -91,22 +112,48 @@ const links = [
     z-index:100;
 
     transition:
-
         background .35s ease,
-
         backdrop-filter .35s ease,
-
         padding .35s ease,
-
         border-color .35s ease,
-
         box-shadow .35s ease;
+
+}
+
+/*  Always-on legibility scrim.
+
+    The hero artwork has a bright sunlit sky behind the right-hand
+    links, which left "Codex" and "Lore" almost unreadable before
+    the .scrolled state kicked in. This gradient sits behind the
+    nav content and keeps every link legible from the first paint. */
+
+.navbar::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    z-index:-1;
+
+    pointer-events:none;
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(5,4,4,.72) 0%,
+            rgba(5,4,4,.45) 55%,
+            transparent 100%
+        );
+
+    transition:opacity .35s ease;
 
 }
 
 .navbar.scrolled{
 
-    background:rgba(10,9,8,.88);
+    background:rgba(10,9,8,.97);
 
     backdrop-filter:blur(16px);
 
@@ -117,6 +164,12 @@ const links = [
     box-shadow:0 12px 30px rgba(0,0,0,.35);
 
     padding:1.25rem 6rem;
+
+}
+
+.navbar.scrolled::before{
+
+    opacity:0;
 
 }
 
@@ -133,6 +186,10 @@ const links = [
     text-decoration:none;
 
     transition:.3s;
+
+    position:relative;
+
+    z-index:2;
 
 }
 
@@ -218,31 +275,237 @@ const links = [
 
 }
 
+/* ==========================================
+   MOBILE TOGGLE
+========================================== */
+
+.nav-toggle{
+
+    display:none;
+
+    position:relative;
+
+    z-index:2;
+
+    width:44px;
+
+    height:44px;
+
+    padding:0;
+
+    border:1px solid rgba(198,166,107,.28);
+
+    border-radius:2px;
+
+    background:rgba(10,9,8,.55);
+
+    color:var(--primary);
+
+    cursor:pointer;
+
+    transition:
+        border-color .3s ease,
+        background .3s ease;
+
+}
+
+.nav-toggle:hover,
+.nav-toggle:focus-visible{
+
+    border-color:var(--primary);
+
+    background:rgba(10,9,8,.85);
+
+}
+
+.nav-toggle-bars{
+
+    display:block;
+
+    position:relative;
+
+    width:20px;
+
+    height:14px;
+
+    margin:0 auto;
+
+}
+
+.nav-toggle-bars span{
+
+    position:absolute;
+
+    left:0;
+
+    width:100%;
+
+    height:1px;
+
+    background:currentColor;
+
+    transition:
+        transform .35s ease,
+        opacity .2s ease;
+
+}
+
+.nav-toggle-bars span:nth-child(1){ top:0; }
+.nav-toggle-bars span:nth-child(2){ top:50%; transform:translateY(-50%); }
+.nav-toggle-bars span:nth-child(3){ bottom:0; }
+
+.nav-toggle[aria-expanded="true"] .nav-toggle-bars span:nth-child(1){
+
+    top:50%;
+
+    transform:translateY(-50%) rotate(45deg);
+
+}
+
+.nav-toggle[aria-expanded="true"] .nav-toggle-bars span:nth-child(2){
+
+    opacity:0;
+
+}
+
+.nav-toggle[aria-expanded="true"] .nav-toggle-bars span:nth-child(3){
+
+    bottom:auto;
+
+    top:50%;
+
+    transform:translateY(-50%) rotate(-45deg);
+
+}
+
+.nav-scrim{
+
+    display:none;
+
+}
+
 @media(max-width:900px){
 
     .navbar{
 
-        padding:2rem;
-
-        flex-direction:column;
-
-        gap:1.5rem;
+        padding:1.25rem 1.5rem;
 
     }
 
     .navbar.scrolled{
 
-        padding:1.5rem 2rem;
+        padding:1rem 1.5rem;
 
     }
 
+    .logo{
+
+        font-size:1.5rem;
+
+    }
+
+    .nav-toggle{
+
+        display:block;
+
+    }
+
+    /*  The drawer. Fully opaque so page content can never
+        bleed through the navigation the way it did when the
+        links simply wrapped over the hero copy. */
+
     .nav-links{
 
-        gap:1.25rem;
+        position:fixed;
 
-        flex-wrap:wrap;
+        /*  Above the scrim, which follows it in the DOM and would
+            otherwise dim the drawer's own links. */
+
+        z-index:2;
+
+        inset:0 0 0 auto;
+
+        width:min(320px,82vw);
+
+        flex-direction:column;
 
         justify-content:center;
+
+        align-items:flex-start;
+
+        gap:2.25rem;
+
+        padding:6rem 2.5rem;
+
+        background:#0a0908;
+
+        border-left:1px solid rgba(198,166,107,.22);
+
+        box-shadow:-30px 0 60px rgba(0,0,0,.6);
+
+        transform:translateX(100%);
+
+        visibility:hidden;
+
+        transition:
+            transform .4s cubic-bezier(.4,0,.2,1),
+            visibility .4s;
+
+    }
+
+    .nav-links a{
+
+        font-size:1rem;
+
+        letter-spacing:.24em;
+
+    }
+
+    .navbar.nav-open .nav-links{
+
+        transform:translateX(0);
+
+        visibility:visible;
+
+    }
+
+    .nav-scrim{
+
+        display:block;
+
+        position:fixed;
+
+        z-index:1;
+
+        inset:0;
+
+        background:rgba(3,3,3,.65);
+
+        backdrop-filter:blur(2px);
+
+        -webkit-backdrop-filter:blur(2px);
+
+        opacity:0;
+
+        transition:opacity .4s ease;
+
+    }
+
+    .navbar.nav-open .nav-scrim{
+
+        opacity:1;
+
+    }
+
+}
+
+@media(prefers-reduced-motion:reduce){
+
+    .nav-links,
+    .nav-scrim,
+    .nav-toggle-bars span{
+
+        transition:none;
 
     }
 

@@ -88,6 +88,11 @@ import Button from "../ui/Button.astro";
 
     min-height:100vh;
 
+    /*  svh tracks the visible viewport on mobile browsers, so the
+        hero is not pushed under the address bar. */
+
+    min-height:100svh;
+
     display:flex;
 
     align-items:center;
@@ -197,7 +202,10 @@ import Button from "../ui/Button.astro";
 
     font-family:"Cinzel",serif;
 
-    font-size:clamp(5rem,10vw,8rem);
+    /*  The old 5rem lower bound was wider than a 390px phone,
+        so the wordmark overflowed and clipped. */
+
+    font-size:clamp(2.75rem,12vw,8rem);
 
     line-height:.9;
 
@@ -215,7 +223,7 @@ import Button from "../ui/Button.astro";
 
     color:var(--primary);
 
-    font-size:1.8rem;
+    font-size:clamp(1.05rem,3.4vw,1.8rem);
 
     letter-spacing:.35em;
 
@@ -253,7 +261,13 @@ import Button from "../ui/Button.astro";
 
     justify-content:center;
 
-    padding-top:180px;
+    /*  The navigation is a single 44px row plus padding now that it
+        collapses into a drawer, so the hero no longer needs to clear
+        two wrapped rows of links. */
+
+    padding-top:120px;
+
+    padding-bottom:7rem;
 
 }
 
@@ -261,9 +275,29 @@ import Button from "../ui/Button.astro";
 
     margin:auto;
 
+    width:100%;
+
+    padding-inline:1.5rem;
+
     text-align:center;
 
     align-items:center;
+
+    gap:1.25rem;
+
+}
+
+.hero h2{
+
+    letter-spacing:.24em;
+
+}
+
+.description{
+
+    font-size:1rem;
+
+    line-height:1.85;
 
 }
 
@@ -298,6 +332,10 @@ import Button from "../ui/Button.astro";
 
     bottom:3rem;
 
+    /*  Sits below the buttons rather than on top of them. */
+
+    pointer-events:none;
+
     left:50%;
 
     transform:translateX(-50%);
@@ -321,7 +359,7 @@ import Button from "../ui/Button.astro";
 
     width:1px;
 
-    height:60px;
+    height:clamp(28px,6vh,60px);
 
     background:
 

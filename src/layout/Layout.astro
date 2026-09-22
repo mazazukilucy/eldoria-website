@@ -226,25 +226,13 @@ const site = "https://eldoriaworld.site";
 
     <script type="module">
 
+        /*  navbar.js owns both the scrolled state and the mobile
+            drawer. It previously sat unimported while this block
+            duplicated the scroll handler, so the file was dead code. */
+
         import "/src/scripts/reveal.js";
 
-        const navbar = document.querySelector(".navbar");
-
-        window.addEventListener("scroll", () => {
-
-            if (window.scrollY > 80) {
-
-                navbar?.classList.add("scrolled");
-
-            }
-
-            else {
-
-                navbar?.classList.remove("scrolled");
-
-            }
-
-        });
+        import "/src/scripts/navbar.js";
 
     </script>
 
