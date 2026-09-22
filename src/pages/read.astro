@@ -1,0 +1,393 @@
+---
+import Layout from "../layout/Layout.astro";
+import PlatformCard from "../components/read/PlatformCard.astro";
+---
+
+<Layout title="Read | Eldoria">
+
+<main class="read-page">
+
+    <section class="hero">
+
+        <p class="eyebrow">
+
+            BOOK ONE
+
+        </p>
+
+        <h1>
+
+            Begin Your Journey
+
+        </h1>
+
+        <div class="divider">
+
+            <span></span>
+
+            ⚜
+
+            <span></span>
+
+        </div>
+
+        <p class="description">
+
+            Every legend begins with a single page.
+
+            Choose your favorite platform and begin your journey through
+            Eldoria: A Divided World.
+
+        </p>
+
+    </section>
+
+    <section class="book">
+
+        <img
+            src="/images/book/book-one-cover.webp"
+            alt="Eldoria Book One"
+        />
+
+    </section>
+
+    <section class="platforms">
+
+        <PlatformCard
+
+            title="Royal Road"
+
+            description="Perfect for fantasy readers who enjoy web serials."
+
+            logo="/images/platforms/royalroad.svg"
+
+            href="https://www.royalroad.com/fiction/178361/eldoria-a-divided-world"
+
+        />
+
+        <PlatformCard
+
+            title="Tapas"
+
+            description="Read Eldoria on one of the world's largest novel platforms."
+
+            logo="/images/platforms/tapas.svg"
+
+            href="https://tapas.io/series/Eldoria-A-World-Divided/info"
+
+            variant="primary"
+
+        />
+
+        <PlatformCard
+
+            title="Scribble Hub"
+
+            description="Follow the adventure with the Scribble Hub community."
+
+            logo="/images/platforms/scribblehub.svg"
+
+            href="https://www.scribblehub.com/series/2429970/eldoria-a-divided-world-book-one/"
+
+        />
+
+        <PlatformCard
+
+            title="Wattpad"
+
+            description="Experience Eldoria with readers from around the world."
+
+            logo="/images/platforms/wattpad.svg"
+
+            href="https://www.wattpad.com/story/413312348-eldoria-a-world-divided-book-one"
+
+        />
+
+    </section>
+
+    <section class="community">
+
+        <p class="eyebrow">
+
+            JOIN THE COMMUNITY
+
+        </p>
+
+        <h2>
+
+            Follow the Journey
+
+        </h2>
+
+        <p>
+
+            Stay up to date with new chapters, artwork, worldbuilding,
+            and development updates as Eldoria continues to grow.
+
+        </p>
+
+        <a
+
+            href="https://bsky.app/profile/lucymazazuki.bsky.social"
+
+            target="_blank"
+
+            rel="noopener noreferrer"
+
+            class="social-button"
+
+        >
+
+            Follow on Bluesky →
+
+        </a>
+
+    </section>
+
+    <section class="quote">
+
+        <p>
+
+            "Every world is born through sacrifice."
+
+        </p>
+
+    </section>
+
+</main>
+
+<style>
+
+.read-page{
+
+    min-height:100vh;
+
+    padding:8rem 2rem;
+
+}
+
+.hero{
+
+    text-align:center;
+
+    max-width:850px;
+
+    margin:0 auto 5rem;
+
+}
+
+.eyebrow{
+
+    color:var(--primary);
+
+    text-transform:uppercase;
+
+    letter-spacing:.35em;
+
+    font-size:.85rem;
+
+}
+
+.hero h1{
+
+    font-family:"Cinzel",serif;
+
+    font-size:clamp(3.5rem,8vw,6rem);
+
+    margin:1rem 0;
+
+}
+
+.divider{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:1rem;
+
+    color:var(--primary);
+
+    margin:2rem 0;
+
+}
+
+.divider span{
+
+    width:120px;
+
+    height:1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--primary),
+            transparent
+        );
+
+}
+
+.description{
+
+    max-width:650px;
+
+    margin:auto;
+
+    color:var(--muted);
+
+    line-height:2;
+
+    font-size:1.1rem;
+
+}
+
+.book{
+
+    display:flex;
+
+    justify-content:center;
+
+    margin-bottom:6rem;
+
+}
+
+.book img{
+
+    width:min(320px,90%);
+
+    border-radius:24px;
+
+    border:1px solid var(--border);
+
+    box-shadow:var(--shadow);
+
+    transition:var(--transition);
+
+}
+
+.book img:hover{
+
+    transform:translateY(-8px);
+
+}
+
+.platforms{
+
+    width:min(var(--max-width),92%);
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:2rem;
+
+}
+
+.community{
+
+    width:min(850px,92%);
+
+    margin:8rem auto;
+
+    text-align:center;
+
+}
+
+.community h2{
+
+    font-family:"Cinzel",serif;
+
+    font-size:clamp(2.5rem,5vw,4rem);
+
+    margin:1rem 0;
+
+}
+
+.community p{
+
+    color:var(--muted);
+
+    line-height:2;
+
+    max-width:650px;
+
+    margin:0 auto 2.5rem;
+
+}
+
+.social-button{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:1rem 2rem;
+
+    border-radius:999px;
+
+    border:1px solid var(--primary);
+
+    color:var(--text);
+
+    text-decoration:none;
+
+    transition:var(--transition);
+
+}
+
+.social-button:hover{
+
+    background:var(--primary);
+
+    color:#000;
+
+    transform:translateY(-4px);
+
+}
+
+.quote{
+
+    margin-top:6rem;
+
+    text-align:center;
+
+}
+
+.quote p{
+
+    font-family:"Cinzel",serif;
+
+    color:var(--primary);
+
+    font-size:1.35rem;
+
+    font-style:italic;
+
+}
+
+@media(max-width:768px){
+
+    .platforms{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .divider span{
+
+        width:60px;
+
+    }
+
+}
+
+</style>
+
+</Layout>

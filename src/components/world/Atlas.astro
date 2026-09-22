@@ -1,0 +1,406 @@
+---
+import { regions } from "../../data/regions";
+import AtlasPanel from "./AtlasPanel.astro";
+
+const currentRegion = regions.find(
+    region => region.id === "calthera"
+)!;
+---<div class="atlas">
+
+  <div class="atlas-header">
+
+    <h2>The Continent of Eldoria</h2>
+
+    <p>Select a region to begin exploring.</p>
+
+  </div>
+
+  <div class="map-container">
+
+    <div class="atlas-wrapper">
+
+      <img
+        src="/images/atlas/eldoria-atlas.webp"
+        alt="The Atlas of Eldoria"
+        class="atlas-map"
+      />
+
+        <a
+            href="/world/dwarven-hold"
+            class="region dwarven"
+            aria-label="Dwarven Holds"
+            data-region="dwarven-hold"
+        ></a>
+        <a
+            href="/world/northern-reach"
+            class="region north"
+            aria-label="Northern Reaches"
+            data-region="northern-reach"
+        ></a>
+        <a
+            href="/world/thorne"
+            class="region thorne"
+            aria-label="Thorne Empire"
+            data-region="thorne"
+        ></a>
+        <a
+            href="/world/wylia"
+            class="region wylia"
+            aria-label="Wylia State"
+            data-region="wylia"
+        ></a>
+        <a
+            href="/world/calthera"
+            class="region calthera"
+            aria-label="Calthera"
+            data-region="calthera"
+        ></a>
+        <a
+            href="/world/eastern-republic"
+            class="region eastern"
+            aria-label="Eastern Republic"
+            data-region="eastern-republic"
+        ></a>
+      <a
+          href="/world/solmara"
+          class="region solmara"
+          aria-label="Solmara"
+          data-region="solmara"
+      ></a>
+
+    </div>
+
+<AtlasPanel region={currentRegion} />  </div>
+
+</div>
+
+<style>
+
+.atlas{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:2rem;
+
+    margin:6rem 0;
+
+}
+
+.atlas-header{
+
+    text-align:center;
+
+}
+
+.atlas-header h2{
+
+    font-family:"Cinzel",serif;
+
+    font-size:2.8rem;
+
+    margin-bottom:1rem;
+
+}
+
+.atlas-header p{
+
+    color:var(--muted);
+
+}
+
+.map-container{
+
+    display:grid;
+
+    grid-template-columns: 3fr 360px;
+    gap:2rem;
+
+    align-items:start;
+
+}
+
+.atlas-wrapper{
+
+    position:relative;
+
+}
+
+.atlas-map{
+
+    width:100%;
+
+    display:block;
+
+    border-radius:20px;
+
+    user-select:none;
+
+    box-shadow:
+
+        0 25px 60px rgba(0,0,0,.45);
+
+    transition:transform .4s ease;
+
+}
+.atlas-wrapper:hover .atlas-map{
+
+    transform:scale(1.01);
+
+}
+.region{
+
+    position:absolute;
+
+    border-radius:12px;
+
+    transition:.3s ease;
+
+}
+
+.region{
+
+    position:absolute;
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+    transition:
+
+        background .25s ease,
+
+        transform .25s ease,
+
+        box-shadow .25s ease;
+
+}
+
+.region:hover{
+
+    background:rgba(198,166,107,.06);
+
+    box-shadow:0 0 40px rgba(198,166,107,.06);
+
+    transform:scale(1.02);
+
+}
+.dwarven{
+
+    top:7%;
+    left:6%;
+    width:25%;
+    height:26%;
+
+}
+
+.north{
+
+    top:6%;
+    left:33%;
+    width:31%;
+    height:28%;
+
+}
+
+.thorne{
+
+    top:5%;
+    right:6%;
+    width:26%;
+    height:28%;
+
+}
+
+.wylia{
+
+    top:34%;
+    left:3%;
+    width:28%;
+    height:30%;
+
+}
+
+.calthera{
+
+    top:34%;
+    left:33%;
+    width:31%;
+    height:27%;
+
+}
+
+.eastern{
+
+    top:34%;
+    right:4%;
+    width:28%;
+    height:30%;
+
+}
+
+.solmara{
+
+    bottom:16%;
+    left:18%;
+    width:64%;
+    height:25%;
+
+}
+
+.atlas-panel{
+
+    position:sticky;
+
+    top:120px;
+
+    background:rgba(11,17,23,.78);
+
+        backdrop-filter:blur(18px);
+
+        box-shadow:
+
+            0 20px 60px rgba(0,0,0,.35);
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:18px;
+
+    padding:2rem;
+
+}
+
+.atlas-panel h2{
+
+    font-family:"Cinzel",serif;
+
+    font-size:2rem;
+
+    margin-bottom:.25rem;
+
+}
+
+.atlas-panel h3{
+
+    color:var(--primary);
+
+    margin-bottom:1rem;
+
+}
+
+.atlas-panel p{
+
+    color:var(--muted);
+
+    line-height:1.8;
+
+    margin-bottom:2rem;
+
+}
+
+.atlas-panel ul{
+
+    list-style:none;
+
+    padding:0;
+
+    margin:0 0 2rem;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:1rem;
+
+}
+
+.atlas-panel a{
+
+    text-decoration:none;
+
+    color:var(--primary);
+
+    font-weight:700;
+
+}
+.region-tag{
+
+    display:inline-block;
+
+    padding:.35rem .8rem;
+
+    margin-bottom:1rem;
+
+    border-radius:999px;
+
+    background:rgba(198,166,107,.06);
+
+    color:var(--primary);
+
+    font-size:.8rem;
+
+    letter-spacing:.15em;
+
+    text-transform:uppercase;
+
+}
+
+.region-stats{
+
+    display:grid;
+
+    gap:1rem;
+
+    margin:2rem 0;
+
+}
+
+.region-stats div{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding-bottom:.75rem;
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+
+}
+
+.region-stats span{
+
+    color:var(--muted);
+
+}
+
+.region-stats strong{
+
+    color:white;
+
+}
+
+.explore{
+
+    display:inline-block;
+
+    margin-top:1rem;
+
+}
+</style>
+<script type="module">
+
+const regionLinks = document.querySelectorAll(".region");
+
+regionLinks.forEach(region => {
+
+    region.addEventListener("mouseenter", () => {
+
+        console.log(region.dataset.region);
+
+    });
+
+});
+
+</script>

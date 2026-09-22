@@ -1,0 +1,133 @@
+---
+import RegionSection from "./RegionSection.astro";
+---
+
+<RegionSection
+
+    title="Government"
+
+    subtitle="Independent kingdoms united by geography, not rule."
+
+>
+
+<div class="government-layout">
+
+    <div class="government-card">
+
+        <h3>
+
+            Independent Monarchies
+
+        </h3>
+
+        <p>
+
+            Solmara is not governed by a single crown. Instead, the region
+            consists of numerous independent kingdoms, each ruled by its own
+            royal family, laws, and traditions.
+
+        </p>
+
+    </div>
+
+    <div class="government-card">
+
+        <h3>
+
+            Village Representation
+
+        </h3>
+
+        <p>
+
+            Every village elects a representative to present the needs of
+            its people before their kingdom, ensuring every community has
+            a voice regardless of size.
+
+        </p>
+
+    </div>
+
+    <div class="government-card">
+
+        <h3>
+
+            Regional Stewardship
+
+        </h3>
+
+        <p>
+
+            Elowen Waslow watches over the kingdoms as Solmara's Specter,
+            preserving peace and balance while never interfering with the
+            sovereignty of individual monarchies.
+
+        </p>
+
+    </div>
+
+</div>
+
+</RegionSection>
+
+<style>
+
+.government-layout{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:2rem;
+
+}
+
+.government-card{
+
+    padding:2.5rem;
+
+    border-radius:22px;
+
+    border:1px solid rgba(198,166,107,.15);
+
+    background:rgba(255,255,255,.03);
+
+    transition:.35s;
+
+}
+
+.government-card:hover{
+
+    transform:translateY(-8px);
+
+    border-color:var(--primary);
+
+}
+
+.government-card h3{
+
+    font-family:"Cinzel",serif;
+
+    margin-bottom:1rem;
+
+}
+
+.government-card p{
+
+    color:var(--muted);
+
+    line-height:1.9;
+
+}
+
+@media(max-width:900px){
+
+.government-layout{
+
+    grid-template-columns:1fr;
+
+}
+
+}
+
+</style>

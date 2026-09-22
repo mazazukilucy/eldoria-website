@@ -1,0 +1,61 @@
+<div class="panel">
+    <slot />
+</div>
+
+<style>
+
+.panel{
+
+    position:relative;
+
+    padding:5rem;
+
+    border:1px solid var(--border);
+
+    border-radius:12px;
+
+    background:
+
+        linear-gradient(
+
+            180deg,
+
+            rgba(24,20,17,.96),
+
+            rgba(16,13,11,.98)
+
+        );
+
+    box-shadow:
+
+        var(--shadow);
+
+    overflow:hidden;
+
+}
+
+.panel::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+        radial-gradient(
+
+            circle at top,
+
+            rgba(198,166,107,.05),
+
+            transparent 70%
+
+        );
+
+    pointer-events:none;
+
+}
+
+</style>

@@ -1,0 +1,68 @@
+---
+import Layout from "../../layout/Layout.astro";
+import Button from "../../components/ui/Button.astro";
+---
+
+<Layout>
+
+<section class="hero">
+
+<h1>Wylia State</h1>
+
+<p>
+
+The Heart of Memory
+
+</p>
+
+<Button href="/world">
+
+← Back to the World
+
+</Button>
+
+</section>
+
+<style>
+
+.hero{
+
+min-height:100vh;
+
+display:flex;
+
+flex-direction:column;
+
+justify-content:center;
+
+align-items:center;
+
+text-align:center;
+
+padding:2rem;
+
+}
+
+.hero h1{
+
+font-family:"Cinzel",serif;
+
+font-size:5rem;
+
+margin-bottom:1rem;
+
+}
+
+.hero p{
+
+font-size:1.3rem;
+
+color:var(--muted);
+
+margin-bottom:3rem;
+
+}
+
+</style>
+
+</Layout>

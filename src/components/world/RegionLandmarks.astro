@@ -1,0 +1,145 @@
+---
+import RegionSection from "./RegionSection.astro";
+---
+
+<RegionSection
+
+    title="Major Landmarks"
+
+    subtitle="Places that have shaped Solmara's history and legend."
+
+>
+
+<div class="landmark-grid">
+
+    <article class="landmark-card">
+
+        <h3>The Tree of Gods</h3>
+
+        <p>
+
+            A colossal ancient oak overlooking the Great Lake,
+            revered throughout Solmara as one of the oldest living
+            landmarks in Eldoria.
+
+        </p>
+
+    </article>
+
+    <article class="landmark-card">
+
+        <h3>The Crown Road</h3>
+
+        <p>
+
+            The oldest highway in Solmara connecting the region's
+            three great kingdoms.
+
+        </p>
+
+    </article>
+
+    <article class="landmark-card">
+
+        <h3>Manicallus Basin</h3>
+
+        <p>
+
+            Beneath the Great Lake lies the largest known concentration
+            of Manicallus crystals in Eldoria.
+
+        </p>
+
+    </article>
+
+    <article class="landmark-card">
+
+        <h3>Solaris Mountain Range</h3>
+
+        <p>
+
+            Towering mountains protecting Solmara's eastern coast
+            from the powerful ocean winds.
+
+        </p>
+
+    </article>
+
+    <article class="landmark-card">
+
+        <h3>Nyxara's Rock</h3>
+
+        <p>
+
+            A floating stone suspended high above Solmara, said to be
+            where Nyxara spends eternity reading the works of mortals.
+
+        </p>
+
+    </article>
+
+</div>
+
+</RegionSection>
+
+<style>
+
+.landmark-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+
+    gap:2rem;
+
+}
+
+.landmark-card{
+
+    padding:2.5rem;
+
+    border-radius:22px;
+
+    border:1px solid rgba(198,166,107,.15);
+
+    background:rgba(255,255,255,.03);
+
+    transition:.35s;
+
+}
+
+.landmark-card:hover{
+
+    transform:translateY(-8px);
+
+    border-color:var(--primary);
+
+    box-shadow:
+
+        0 20px 50px rgba(0,0,0,.3),
+
+        0 0 30px rgba(198,166,107,.08);
+
+}
+
+.landmark-card h3{
+
+    font-family:"Cinzel",serif;
+
+    color:var(--text);
+
+    margin-bottom:1rem;
+
+    font-size:2rem;
+
+}
+
+.landmark-card p{
+
+    color:var(--muted);
+
+    line-height:1.9;
+
+}
+
+</style>

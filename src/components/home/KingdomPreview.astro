@@ -1,0 +1,71 @@
+---
+import Section from "../ui/Section.astro";
+import Container from "../ui/Container.astro";
+import Card from "../ui/Card.astro";
+
+const kingdoms = [
+  {
+    name: "Calthera",
+    description:
+      "The kingdom of faith and home of the Grand Cathedral.",
+  },
+  {
+    name: "Solmara",
+    description:
+      "A proud southern kingdom where freedom outweighs tradition.",
+  },
+  {
+    name: "Northern Reach",
+    description:
+      "A frozen land where survival itself is considered strength.",
+  },
+];
+---
+
+<Section
+  title="The Kingdoms"
+  subtitle="Seven realms. Seven histories. One divided world."
+>
+
+  <Container>
+
+    <div class="grid">
+
+      {kingdoms.map((kingdom) => (
+
+        <Card title={kingdom.name}>
+
+          <p>{kingdom.description}</p>
+
+        </Card>
+
+      ))}
+
+    </div>
+
+  </Container>
+
+</Section>
+
+<style>
+
+.grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(auto-fit,minmax(300px,1fr));
+
+    gap:2rem;
+
+}
+
+.grid p{
+
+    color:var(--muted);
+
+    line-height:1.8;
+
+}
+
+</style>

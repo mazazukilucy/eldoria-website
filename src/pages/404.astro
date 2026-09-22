@@ -1,0 +1,181 @@
+---
+import Layout from "../layout/Layout.astro";
+import Button from "../components/ui/Button.astro";
+---
+
+<Layout
+    title="The Path Has Been Lost | Eldoria"
+    description="Even the oldest maps of Eldoria cannot guide you here."
+>
+
+<main class="not-found">
+
+    <p class="eyebrow">
+
+        ERROR 404
+
+    </p>
+
+    <h1>
+
+        The Path Has Been Lost
+
+    </h1>
+
+    <div class="divider">
+
+        <span></span>
+
+        ⚜
+
+        <span></span>
+
+    </div>
+
+    <p class="description">
+
+        Even the oldest maps of Eldoria cannot guide you here.
+        Perhaps another road will lead you back.
+
+    </p>
+
+    <div class="buttons">
+
+        <Button href="/">
+
+            Return Home
+
+        </Button>
+
+        <Button
+            href="/world"
+            variant="secondary"
+        >
+
+            Explore the Atlas
+
+        </Button>
+
+    </div>
+
+</main>
+
+<style>
+
+.not-found{
+
+    min-height:80vh;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    padding:2rem;
+
+}
+
+.eyebrow{
+
+    color:var(--primary);
+
+    letter-spacing:.35em;
+
+    text-transform:uppercase;
+
+    font-size:.85rem;
+
+    margin-bottom:1rem;
+
+}
+
+h1{
+
+    font-family:"Cinzel",serif;
+
+    font-size:clamp(3rem,8vw,5.5rem);
+
+    margin-bottom:1.5rem;
+
+}
+
+.divider{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:1rem;
+
+    color:var(--primary);
+
+    margin-bottom:2rem;
+
+}
+
+.divider span{
+
+    width:120px;
+
+    height:1px;
+
+    background:linear-gradient(
+
+        90deg,
+
+        transparent,
+
+        var(--primary),
+
+        transparent
+
+    );
+
+}
+
+.description{
+
+    max-width:700px;
+
+    color:var(--muted);
+
+    line-height:2;
+
+    font-size:1.1rem;
+
+    margin-bottom:3rem;
+
+}
+
+.buttons{
+
+    display:flex;
+
+    gap:1.5rem;
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+}
+
+@media(max-width:768px){
+
+    .divider span{
+
+        width:60px;
+
+    }
+
+}
+
+</style>
+
+</Layout>

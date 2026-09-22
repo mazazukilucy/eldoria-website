@@ -1,0 +1,216 @@
+---
+import Section from "../ui/Section.astro";
+import Button from "../ui/Button.astro";
+---
+
+<Section>
+
+<div class="featured-region">
+
+    <div class="region-content">
+
+        <span class="eyebrow">
+            FEATURED REGION
+        </span>
+
+        <h2>
+            Where the Ancient Forests Whisper
+        </h2>
+
+        <h3>
+            The Thorne Empire
+        </h3>
+
+        <p>
+            Hidden beneath towering white trees and veiled in ancient magic,
+            the Thorne Empire has stood for thousands of years.
+            Every path through its forests carries forgotten stories,
+            and every whisper among its leaves echoes with history.
+        </p>
+
+    </div>
+
+    <div class="region-image">
+
+        <img
+            src="/images/regions/thorne-hero.webp"
+            alt="The Thorne Empire"
+        />
+
+        <div class="image-overlay">
+
+            <Button href="/world/thorne">
+                Explore the Thorne Empire →
+            </Button>
+
+        </div>
+
+    </div>
+
+</div></Section>
+
+<style>
+
+.featured-region{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:3rem;
+
+}
+.region-image{
+
+    position:relative;
+
+    overflow:hidden;
+
+    border-radius:18px;
+
+}
+.region-image:hover::after{
+
+    opacity:1;
+
+}
+.region-image::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+        linear-gradient(
+
+            to top,
+
+            rgba(9,8,6,.55),
+
+            transparent 45%
+
+        );
+
+    opacity:0;
+
+    transition:.5s;
+
+}
+
+.region-image:hover img{
+
+    transform:scale(1.04);
+
+    filter:brightness(1.08);
+
+}
+.region-image img{
+
+    width:100%;
+
+    height:700px;
+
+    object-fit:cover;
+
+    object-position:center;
+
+    display:block;
+
+    border-radius:18px;
+
+    border:1px solid var(--border);
+
+    box-shadow:var(--shadow);
+
+    transition:
+
+        transform .7s ease,
+
+        filter .7s ease;
+
+}
+.region-content{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:1.5rem;
+
+}
+
+.eyebrow{
+
+    color:var(--primary);
+
+    letter-spacing:.3em;
+
+    text-transform:uppercase;
+
+    font-size:.8rem;
+
+}
+
+.region-content h2{
+
+    color:var(--text);
+
+    font-size:clamp(2.5rem,4vw,3.5rem);
+
+    line-height:1.15;
+
+}
+
+.region-content h3{
+
+    color:var(--primary);
+
+    font-size:1.3rem;
+
+    font-weight:400;
+
+}
+
+.region-content p{
+
+    line-height:2;
+
+}
+
+@media(max-width:900px){
+
+.featured-region{
+
+    grid-template-columns:1fr;
+
+}
+
+}
+.image-overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:flex-end;
+
+    padding:3rem;
+
+    opacity:0;
+
+    transition:.45s;
+
+}
+.region-image:hover .image-overlay{
+
+    opacity:1;
+
+}
+</style>

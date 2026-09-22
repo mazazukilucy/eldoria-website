@@ -1,0 +1,160 @@
+---
+import type { Region } from "../../data/regions";
+
+interface Props{
+    region: Region;
+}
+
+const { region } = Astro.props;
+---
+
+<aside class="atlas-panel">
+
+    <span class="region-tag">
+
+        REGION
+
+    </span>
+
+    <h2 id="region-name">{region.name}</h2>
+    <h3 style={`color:${region.color}`}>
+
+        {region.title}
+
+    </h3>    
+    <p id="region-description">{region.description}</p>    <div class="region-stats">
+
+        <div>
+
+            <span>Capital</span>
+
+            <strong id="region-capital">{region.capital}</strong>
+        </div>
+
+        <div>
+
+            <span>Population</span>
+
+            <strong id="region-population">{region.population}</strong>
+        </div>
+
+        <div>
+
+            <span>Specter</span>
+
+            <strong id="region-specter">{region.specter}</strong>
+
+        </div>
+
+    </div>
+
+    <a
+        id="region-link"
+        href={`/world/${region.id}`}
+        class="explore"
+    >
+        Explore Region →
+
+    </a>
+
+</aside>
+
+<style>
+
+.atlas-panel{
+
+    position:sticky;
+
+    top:120px;
+
+    background:rgba(255,255,255,.03);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:18px;
+
+    padding:2rem;
+
+}
+
+.region-tag{
+
+    display:inline-block;
+
+    padding:.35rem .8rem;
+
+    margin-bottom:1rem;
+
+    border-radius:999px;
+
+    background:rgba(198,166,107,.06);
+
+    color:var(--primary);
+
+    font-size:.8rem;
+
+    letter-spacing:.15em;
+
+    text-transform:uppercase;
+
+}
+
+.atlas-panel h2{
+
+    font-family:"Cinzel",serif;
+
+    font-size:2rem;
+
+    margin-bottom:.25rem;
+
+}
+
+.atlas-panel h3{
+
+    color:var(--primary);
+
+    margin-bottom:1rem;
+
+}
+
+.atlas-panel p{
+
+    color:var(--muted);
+
+    line-height:1.8;
+
+}
+
+.region-stats{
+
+    display:grid;
+
+    gap:1rem;
+
+    margin:2rem 0;
+
+}
+
+.region-stats div{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+
+    padding-bottom:.75rem;
+
+}
+
+.explore{
+
+    color:var(--primary);
+
+    text-decoration:none;
+
+    font-weight:700;
+
+}
+
+</style>

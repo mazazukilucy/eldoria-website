@@ -1,0 +1,169 @@
+---
+import Section from "../ui/Section.astro";
+import Button from "../ui/Button.astro";
+---
+
+<Section>
+
+<div class="cta">
+
+    <span class="overline">
+
+        YOUR JOURNEY AWAITS
+
+    </span>
+
+    <h2>
+
+        The Story Continues
+
+    </h2>
+
+    <p>
+
+        Every chapter reveals another piece of Eldoria's history.
+
+        Join the community, discuss theories, follow development,
+        and become part of the world as it continues to grow.
+
+    </p>
+
+    <div class="cta-buttons">
+
+        <Button href="/read">
+
+            Begin Reading
+
+        </Button>
+
+        <Button
+            href="/community"
+            variant="secondary"
+        >
+
+            Join the Community
+
+        </Button>
+
+    </div>
+
+</div>
+
+</Section>
+
+<style>
+
+.cta{
+
+    position:relative;
+
+    max-width:900px;
+
+    margin:auto;
+
+    padding:5rem;
+
+    text-align:center;
+
+    border:1px solid var(--border);
+
+    border-radius:14px;
+
+    overflow:hidden;
+
+    background:
+
+        linear-gradient(
+
+            180deg,
+
+            rgba(25,20,17,.96),
+
+            rgba(15,13,11,.98)
+
+        );
+
+}
+
+.cta::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+        radial-gradient(
+
+            circle,
+
+            rgba(198,166,107,.06),
+
+            transparent 70%
+
+        );
+    pointer-events:none;
+
+}
+
+.overline{
+
+    display:block;
+
+    margin-bottom:1rem;
+
+    color:var(--primary);
+
+    letter-spacing:.35em;
+
+    text-transform:uppercase;
+
+    font-size:.8rem;
+
+}
+
+.cta h2{
+
+    font-size:clamp(2.8rem,5vw,4rem);
+
+    margin-bottom:2rem;
+
+    color:var(--text);
+
+}
+
+.cta p{
+
+    max-width:650px;
+
+    margin:0 auto 3rem;
+
+    line-height:2;
+
+}
+
+.cta-buttons{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:1.5rem;
+
+    flex-wrap:wrap;
+
+}
+
+@media(max-width:768px){
+
+.cta{
+
+    padding:3rem 2rem;
+
+}
+
+}
+
+</style>

@@ -1,0 +1,157 @@
+---
+import RegionSection from "./RegionSection.astro";
+---
+
+<RegionSection
+
+    title="Major Races"
+
+    subtitle="The people who call Solmara home."
+
+>
+
+<div class="race-grid">
+
+    <article class="race-card">
+
+        <h3>Humans</h3>
+
+        <p class="status">Majority</p>
+
+        <p>
+
+            The dominant people of Solmara, forming the backbone of its kingdoms,
+            commerce, agriculture, and government.
+
+        </p>
+
+    </article>
+
+    <article class="race-card">
+
+        <h3>Beastkin</h3>
+
+        <p class="status">Common</p>
+
+        <p>
+
+            Integrated throughout Solmara, Beastkin contribute to every aspect
+            of society, from farming and craftsmanship to military service.
+
+        </p>
+
+    </article>
+
+    <article class="race-card">
+
+        <h3>Demi-Humans</h3>
+
+        <p class="status">Common</p>
+
+        <p>
+
+            Found across towns and cities, Demi-Humans enrich Solmara's diverse
+            communities through countless professions and traditions.
+
+        </p>
+
+    </article>
+
+    <article class="race-card">
+
+        <h3>Elves</h3>
+
+        <p class="status">Rare</p>
+
+        <p>
+
+            Though welcomed, elves are uncommon in Solmara, with most tracing
+            their origins to the Thorne Empire.
+
+        </p>
+
+    </article>
+
+</div>
+
+</RegionSection>
+
+<style>
+
+.race-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:2rem;
+
+}
+
+.race-card{
+
+    padding:2.5rem;
+
+    border-radius:20px;
+
+    border:1px solid rgba(198,166,107,.15);
+
+    background:rgba(255,255,255,.03);
+
+    transition:.35s;
+
+}
+
+.race-card:hover{
+
+    transform:translateY(-8px);
+
+    border-color:var(--primary);
+
+}
+
+.race-card h3{
+
+    font-family:"Cinzel",serif;
+
+    font-size:2rem;
+
+    color:white;
+
+    margin-bottom:.5rem;
+
+}
+
+.status{
+
+    color:var(--primary);
+
+    text-transform:uppercase;
+
+    letter-spacing:.25em;
+
+    font-size:.75rem;
+
+    margin-bottom:1.5rem;
+
+}
+
+.race-card p{
+
+    color:var(--muted);
+
+    line-height:1.9;
+
+}
+
+@media(max-width:768px){
+
+.race-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+}
+
+</style>

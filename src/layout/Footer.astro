@@ -1,0 +1,281 @@
+<footer>
+
+    <div class="container">
+
+        <h2>
+
+            ELDORIA
+
+        </h2>
+
+        <p class="subtitle">
+
+            A Divided World
+
+        </p>
+
+        <div class="divider">
+
+            <span></span>
+
+            ⚜
+
+            <span></span>
+
+        </div>
+
+        <p class="tagline">
+
+            Every world is born through sacrifice.
+
+        </p>
+
+        <nav>
+
+            <a href="/">Home</a>
+
+            <a href="/world">Atlas</a>
+
+            <a href="/read">Read</a>
+
+            <a href="/lore">Lore</a>
+
+            <a href="/codex">Codex</a>
+
+            <a href="/community">Community</a>
+
+        </nav>
+
+        <p class="closing">
+
+            May your journey through Eldoria be only the beginning.
+
+        </p>
+
+        <p class="copyright">
+
+            © 2026 <strong>Eldoria: A Divided World</strong><br>
+
+            Created by <strong>Lucy Mazazuki</strong>
+
+        </p>
+
+    </div>
+
+</footer>
+
+<style>
+
+footer{
+
+    margin-top:10rem;
+
+    padding:6rem 2rem;
+
+    border-top:1px solid var(--border);
+
+    background:var(--surface);
+
+}
+
+.container{
+
+    width:min(var(--max-width),92%);
+
+    margin:auto;
+
+    text-align:center;
+
+}
+
+footer h2{
+
+    font-family:"Cinzel",serif;
+
+    font-size:clamp(2rem,4vw,3rem);
+
+    letter-spacing:.25em;
+
+    color:var(--text);
+
+    margin-bottom:.5rem;
+
+}
+
+.subtitle{
+
+    color:var(--primary);
+
+    text-transform:uppercase;
+
+    letter-spacing:.35em;
+
+    font-size:.85rem;
+
+    margin-bottom:2rem;
+
+}
+
+.divider{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:1rem;
+
+    margin-bottom:2rem;
+
+    color:var(--primary);
+
+}
+
+.divider span{
+
+    width:120px;
+
+    height:1px;
+
+    background:
+
+        linear-gradient(
+
+            90deg,
+
+            transparent,
+
+            var(--primary),
+
+            transparent
+
+        );
+
+}
+
+.tagline{
+
+    color:var(--muted);
+
+    font-size:1.1rem;
+
+    line-height:1.9;
+
+    max-width:650px;
+
+    margin:0 auto 3rem;
+
+}
+
+nav{
+
+    display:flex;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+    gap:2.5rem;
+
+    margin-bottom:3rem;
+
+}
+
+nav a{
+
+    position:relative;
+
+    color:var(--muted);
+
+    text-decoration:none;
+
+    transition:var(--transition);
+
+}
+
+nav a::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    bottom:-6px;
+
+    width:0;
+
+    height:1px;
+
+    background:var(--primary);
+
+    transition:var(--transition);
+
+}
+
+nav a:hover{
+
+    color:var(--text);
+
+}
+
+nav a:hover::after{
+
+    width:100%;
+
+}
+
+.closing{
+
+    color:var(--primary);
+
+    font-style:italic;
+
+    margin-bottom:2rem;
+
+}
+
+.copyright{
+
+    color:var(--muted);
+
+    opacity:.75;
+
+    font-size:.9rem;
+
+    line-height:1.8;
+
+}
+
+.copyright strong{
+
+    color:var(--text);
+
+    font-weight:500;
+
+}
+
+@media(max-width:768px){
+
+    footer{
+
+        padding:5rem 1.5rem;
+
+    }
+
+    nav{
+
+        gap:1.5rem;
+
+    }
+
+    .divider span{
+
+        width:60px;
+
+    }
+
+}
+
+</style>

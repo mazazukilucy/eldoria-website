@@ -1,0 +1,251 @@
+---
+const pathname = Astro.url.pathname;
+
+const links = [
+
+    {
+        href:"/world",
+        label:"Atlas"
+    },
+
+    {
+        href:"/read",
+        label:"Read"
+    },
+
+    {
+        href:"/codex",
+        label:"Codex"
+    },
+
+    {
+        href:"/lore",
+        label:"Lore"
+    },
+
+    {
+        href:"/community",
+        label:"Community"
+    }
+
+];
+---
+
+<nav class="navbar">
+
+    <a
+        href="/"
+        class={`logo ${pathname === "/" ? "active-logo" : ""}`}
+    >
+
+        ELDORIA
+
+    </a>
+
+    <div class="nav-links">
+
+        {
+
+            links.map((link)=>(
+
+                <a
+
+                    href={link.href}
+
+                    class={pathname.startsWith(link.href) ? "active" : ""}
+
+                >
+
+                    {link.label}
+
+                </a>
+
+            ))
+
+        }
+
+    </div>
+
+</nav>
+
+<style>
+
+.navbar{
+
+    position:fixed;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    padding:2rem 6rem;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    z-index:100;
+
+    transition:
+
+        background .35s ease,
+
+        backdrop-filter .35s ease,
+
+        padding .35s ease,
+
+        border-color .35s ease,
+
+        box-shadow .35s ease;
+
+}
+
+.navbar.scrolled{
+
+    background:rgba(10,9,8,.88);
+
+    backdrop-filter:blur(16px);
+
+    -webkit-backdrop-filter:blur(16px);
+
+    border-bottom:1px solid rgba(198,166,107,.18);
+
+    box-shadow:0 12px 30px rgba(0,0,0,.35);
+
+    padding:1.25rem 6rem;
+
+}
+
+.logo{
+
+    font-family:"Cinzel",serif;
+
+    font-size:2rem;
+
+    letter-spacing:.18em;
+
+    color:var(--primary);
+
+    text-decoration:none;
+
+    transition:.3s;
+
+}
+
+.logo:hover{
+
+    color:var(--primary-light);
+
+}
+
+.active-logo{
+
+    color:var(--primary-light);
+
+}
+
+.nav-links{
+
+    display:flex;
+
+    gap:3rem;
+
+}
+
+.nav-links a{
+
+    position:relative;
+
+    color:var(--text);
+
+    text-decoration:none;
+
+    font-size:.9rem;
+
+    letter-spacing:.18em;
+
+    text-transform:uppercase;
+
+    transition:.3s;
+
+}
+
+.nav-links a::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    bottom:-8px;
+
+    width:0;
+
+    height:1px;
+
+    background:var(--primary);
+
+    transition:.35s;
+
+}
+
+.nav-links a:hover{
+
+    color:var(--primary);
+
+}
+
+.nav-links a:hover::after{
+
+    width:100%;
+
+}
+
+.nav-links a.active{
+
+    color:var(--primary);
+
+}
+
+.nav-links a.active::after{
+
+    width:100%;
+
+}
+
+@media(max-width:900px){
+
+    .navbar{
+
+        padding:2rem;
+
+        flex-direction:column;
+
+        gap:1.5rem;
+
+    }
+
+    .navbar.scrolled{
+
+        padding:1.5rem 2rem;
+
+    }
+
+    .nav-links{
+
+        gap:1.25rem;
+
+        flex-wrap:wrap;
+
+        justify-content:center;
+
+    }
+
+}
+
+</style>

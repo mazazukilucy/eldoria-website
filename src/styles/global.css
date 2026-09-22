@@ -1,0 +1,264 @@
+/* ==========================================
+   RESET
+========================================== */
+
+*,
+*::before,
+*::after{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+/* ==========================================
+   THEME
+========================================== */
+
+:root{
+
+    /* Backgrounds */
+
+    --bg:#050505;
+
+    --surface:#0b0a09;
+
+    --surface-light:#14110f;
+
+    /* Text */
+
+    --text:#f4efe6;
+
+    --muted:#b6a999;
+
+    /* Brand */
+
+    --primary:#c6a66b;
+
+    --primary-light:#e5c991;
+
+    --primary-dark:#8e7143;
+
+    /* UI */
+
+    --border:#2b241d;
+
+    --border-light:#43372b;
+
+    --shadow:
+        0 20px 60px rgba(0,0,0,.45);
+
+    --shadow-hover:
+        0 30px 80px rgba(0,0,0,.55);
+
+        /* Radius */
+
+    --radius-sm:12px;
+
+    --radius-md:20px;
+
+    --radius-lg:28px;
+
+    /* Transitions */
+
+    --transition:.35s ease;
+
+    /* Width */
+
+    --max-width:1200px;
+}
+/* ==========================================
+   HTML
+========================================== */
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+/* ==========================================
+   BODY
+========================================== */
+
+body{
+
+    background:
+
+        url("/images/textures/stone.webp")
+
+        center center / cover
+
+        no-repeat
+
+        fixed;
+
+}body::before{
+
+    content:"";
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    z-index:9999;
+
+    opacity:.025;
+
+    background:url("/images/textures/noise.webp");
+
+    background-repeat:repeat;
+
+    background-size:250px;
+
+    mix-blend-mode:soft-light;
+    
+    filter:contrast(120%);
+
+}
+/* ==========================================
+   TYPOGRAPHY
+========================================== */
+
+h1,
+h2,
+h3,
+h4,
+h5{
+
+    font-family:"Cinzel",serif;
+
+}
+
+p{
+
+    color:var(--muted);
+
+    line-height:1.9;
+
+}
+
+a{
+
+    color:inherit;
+
+    text-decoration:none;
+
+}
+
+/* ==========================================
+   SELECTION
+========================================== */
+
+::selection{
+
+    background:var(--primary);
+
+    color:#111;
+
+}
+
+/* ==========================================
+   SCROLLBAR
+========================================== */
+
+::-webkit-scrollbar{
+
+    width:12px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#14110f;
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:
+
+        linear-gradient(
+
+            180deg,
+
+            var(--primary-light),
+
+            var(--primary)
+
+        );
+
+    border-radius:999px;
+
+    border:2px solid #1b1612;
+
+}
+/* ==========================================
+   UTILITIES
+========================================== */
+
+img{
+
+    display:block;
+
+    max-width:100%;
+
+}
+
+.fade-up{
+
+    opacity:0;
+
+    transform:translateY(40px);
+
+    transition:
+
+        opacity .8s ease,
+
+        transform .8s ease;
+
+}
+
+.fade-up.visible{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+.reveal{
+
+    opacity:0;
+
+    transform:translateY(60px);
+
+    transition:
+
+        opacity .9s ease,
+
+        transform .9s ease;
+
+}
+
+.reveal.visible{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+.parchment{
+
+    background:
+
+        url("/images/textures/parchment.webp");
+
+    background-size:cover;
+
+    background-repeat:no-repeat;
+
+    border:1px solid rgba(198,166,107,.18);
+
+    box-shadow:var(--shadow);
+
+}

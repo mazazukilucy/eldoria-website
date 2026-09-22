@@ -1,0 +1,152 @@
+---
+interface Props{
+
+    href:string;
+
+    variant?:"primary"|"secondary";
+
+}
+
+const{
+
+    href,
+
+    variant="primary"
+
+}=Astro.props;
+---
+
+<a
+    href={href}
+    class={`btn ${variant}`}
+>
+
+<span>
+
+<slot/>
+
+</span>
+
+</a>
+
+<style>
+
+.btn{
+
+    position:relative;
+
+    overflow:hidden;
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:1rem 2.75rem;
+
+    border-radius:8px;
+
+    border:1px solid var(--primary);
+
+    background:
+
+        linear-gradient(
+
+            180deg,
+
+            rgba(33,27,22,.96),
+
+            rgba(18,15,13,.98)
+
+        );
+
+    color:var(--text);
+
+    transition:
+
+        transform .35s,
+
+        border-color .35s,
+
+        box-shadow .35s;
+
+}
+
+.btn span{
+
+    position:relative;
+
+    z-index:2;
+
+    letter-spacing:.12em;
+
+    text-transform:uppercase;
+
+    font-weight:600;
+
+    font-size:.9rem;
+
+}
+
+.btn::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+        linear-gradient(
+
+            90deg,
+
+            transparent,
+
+            rgba(255,255,255,.12),
+
+            transparent
+
+        );
+
+    transform:translateX(-120%);
+
+    transition:.8s;
+
+}
+
+.btn:hover{
+
+    transform:translateY(-3px);
+
+    border-color:var(--primary-light);
+
+    box-shadow:
+
+        0 10px 35px rgba(198,166,107,.18);
+
+}
+
+.btn:hover::before{
+
+    transform:translateX(120%);
+
+}
+
+.secondary{
+
+    background:transparent;
+
+}
+
+.secondary:hover{
+
+    background:
+
+        rgba(198,166,107,.08);
+
+}
+
+</style>

@@ -1,0 +1,135 @@
+---
+import RegionCard from "./RegionCard.astro";
+---
+
+<section class="atlas-regions">
+
+    <h2>
+
+        The Seven Regions
+
+    </h2>
+
+    <p>
+
+        Every region of Eldoria possesses its own history, culture, and destiny.
+
+    </p>
+
+    <div class="atlas-divider">
+
+        ⚜
+
+    </div>
+
+    <div class="region-grid">
+        
+    <RegionCard
+        title="Calthera"
+        tagline="The Holy Heart of Eldoria"
+        image="/images/regions/calthera.webp"
+        href="/world/calthera"
+    />
+
+    <RegionCard
+        title="Solmara"
+        tagline="The Golden Heartland"
+        image="/images/regions/solmara.webp"
+        href="/world/solmara"
+    />
+
+    <RegionCard
+        title="Northern Reach"
+        tagline="Where Winter Never Ends"
+        image="/images/regions/northern-reach.webp"
+        href="/world/northern-reach"
+    />
+
+    <RegionCard
+        title="Thorne Empire"
+        tagline="The Emerald Kingdom"
+        image="/images/regions/thorne.webp"
+        href="/world/thorne"
+    />
+
+    <RegionCard
+        title="Wylia State"
+        tagline="Freedom Forged in Shadow"
+        image="/images/regions/wylia.webp"
+        href="/world/wylia"
+    />
+
+    <RegionCard
+        title="Eastern Republic"
+        tagline="Gateway to the Eastern Seas"
+        image="/images/regions/eastern-republic.webp"
+        href="/world/eastern-republic"
+    />
+
+    <RegionCard
+        title="Dwarven Hold"
+        tagline="Kingdom Beneath the Peaks"
+        image="/images/regions/dwarven-hold.webp"
+        href="/world/dwarven-hold"
+    />
+
+        
+    </div>
+
+</section>
+
+<style>
+
+.region-grid{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:4rem;
+
+    margin:8rem auto;
+
+}
+.atlas-regions{
+
+    text-align:center;
+
+    margin-top:8rem;
+
+}
+
+.atlas-regions p{
+
+    max-width:700px;
+
+    margin:1rem auto 0;
+
+    color:var(--muted);
+
+    line-height:1.9;
+
+}
+
+.atlas-divider{
+
+    margin:4rem auto;
+
+    font-size:2rem;
+
+    color:var(--primary);
+
+    opacity:.7;
+
+}
+
+.region-grid{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:4rem;
+
+}
+</style>

@@ -1,0 +1,55 @@
+---
+import Section from "../ui/Section.astro";
+import Container from "../ui/Container.astro";
+import CharacterCard from "./CharacterCard.astro";
+
+import { characters } from "../../data/characters.ts";
+---
+
+<Section
+title="Featured Characters"
+subtitle="Every legend begins with a single soul."
+>
+
+<Container>
+
+<div class="grid">
+
+{
+
+characters.map(character=>(
+
+<CharacterCard
+
+name={character.name}
+
+title={character.title}
+
+quote={character.quote}
+
+/>
+
+))
+
+}
+
+</div>
+
+</Container>
+
+</Section>
+
+<style>
+
+.grid{
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(280px,1fr));
+
+gap:2rem;
+
+}
+
+</style>

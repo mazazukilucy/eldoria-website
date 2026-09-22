@@ -1,0 +1,554 @@
+---
+import Button from "../ui/Button.astro";
+---
+
+<section class="hero">
+
+    <div class="hero-background">
+
+        <img
+            src="/images/hero/hero-background.webp"
+            alt="Celeste overlooking Caelrith"
+            class="hero-image"
+        />
+        <div class="hero-particles">
+
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </div>
+        <div class="hero-light"></div>
+        <div class="hero-overlay"></div>
+
+    </div>
+
+    <div class="hero-content">
+
+        <p class="eyebrow">
+            An Original Fantasy Saga
+        </p>
+
+        <h1>
+            ELDORIA
+        </h1>
+
+        <h2>
+            A Divided World
+        </h2>
+
+            <p class="description">
+                Every world is born through sacrifice.
+            </p>
+
+            <p class="description">
+                Journey across a continent divided by history,
+                where kingdoms rise, forgotten truths awaken,
+                and every legend begins with a single choice.
+            </p>
+        <div class="hero-buttons">
+
+            <Button href="/read">
+
+                Read the Story
+
+            </Button>
+
+            <Button
+                href="/world"
+                variant="secondary"
+            >
+
+                Explore the Atlas
+
+            </Button>
+
+        </div>
+        
+    </div>
+    <div class="scroll-indicator">
+
+                <span></span>
+
+                <p>Discover Eldoria</p>
+
+            </div>
+</section>
+
+<style>
+
+.hero{
+
+    position:relative;
+
+    min-height:100vh;
+
+    display:flex;
+
+    align-items:center;
+
+    overflow:hidden;
+
+    padding-top:140px;
+
+}
+
+.hero-background{
+
+    position:absolute;
+
+    inset:0;
+
+}
+
+.hero-image{
+
+    position:absolute;
+
+    inset:0;
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    object-position:right center;
+
+    z-index:1;
+
+}
+.hero-overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    z-index:4;
+
+    background:
+
+    linear-gradient(
+
+        90deg,
+
+        rgba(8,7,6,.92) 0%,
+
+        rgba(8,7,6,.75) 30%,
+
+        rgba(8,7,6,.28) 55%,
+
+        rgba(8,7,6,.05) 75%,
+
+        transparent 100%
+
+    ),
+
+    linear-gradient(
+
+        to bottom,
+
+        rgba(0,0,0,.05),
+
+        rgba(0,0,0,.20),
+
+        rgba(0,0,0,.65)
+
+    );
+
+}
+
+.hero-content{
+
+    position:relative;
+
+    z-index:5;
+
+    width:min(620px,90%);
+
+    margin-left:8%;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:1.6rem;
+
+}
+
+.eyebrow{
+
+    color:var(--primary);
+
+    text-transform:uppercase;
+
+    letter-spacing:.35em;
+
+    font-size:.9rem;
+
+}
+
+.hero h1{
+
+    font-family:"Cinzel",serif;
+
+    font-size:clamp(5rem,10vw,8rem);
+
+    line-height:.9;
+
+    color:var(--text);
+
+    text-shadow:
+
+        0 4px 18px rgba(0,0,0,.55);
+
+}
+
+.hero h2{
+
+    font-family:"Cinzel",serif;
+
+    color:var(--primary);
+
+    font-size:1.8rem;
+
+    letter-spacing:.35em;
+
+    text-transform:uppercase;
+
+}
+
+.description{
+
+    max-width:600px;
+
+    font-size:1.1rem;
+
+    line-height:2;
+
+    color:var(--muted);
+
+}
+
+.hero-buttons{
+
+    display:flex;
+
+    gap:1.5rem;
+
+    margin-top:1rem;
+
+    flex-wrap:wrap;
+
+}
+
+@media(max-width:900px){
+
+.hero{
+
+    justify-content:center;
+
+    padding-top:180px;
+
+}
+
+.hero-content{
+
+    margin:auto;
+
+    text-align:center;
+
+    align-items:center;
+
+}
+
+.hero-buttons{
+
+    justify-content:center;
+
+}
+
+.hero-overlay{
+
+    background:
+
+        linear-gradient(
+
+            to bottom,
+
+            rgba(0,0,0,.45),
+
+            rgba(0,0,0,.65),
+
+            rgba(0,0,0,.85)
+
+        );
+
+}
+
+}
+.scroll-indicator{
+
+    position:absolute;
+
+    bottom:3rem;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    gap:1rem;
+
+    color:var(--muted);
+
+    animation:float 2.5s ease-in-out infinite;
+
+    z-index:5;
+}
+
+.scroll-indicator span{
+
+    width:1px;
+
+    height:60px;
+
+    background:
+
+        linear-gradient(
+
+            transparent,
+
+            var(--primary)
+
+        );
+
+}
+@keyframes float{
+
+    0%,100%{
+
+        transform:
+            translateX(-50%)
+            translateY(0);
+
+    }
+
+    50%{
+
+        transform:
+            translateX(-50%)
+            translateY(10px);
+
+    }
+
+}
+.scroll-indicator p{
+
+    font-size:.75rem;
+
+    letter-spacing:.3em;
+
+    text-transform:uppercase;
+
+    color:var(--primary);
+
+}
+.hero-particles{
+
+    position:absolute;
+
+    inset:0;
+
+    overflow:hidden;
+
+    pointer-events:none;
+
+    z-index:3;
+
+}
+
+.hero-particles span{
+
+    position:absolute;
+
+    width:3px;
+
+    height:3px;
+
+    border-radius:50%;
+
+    background:rgba(255,232,180,.75);
+
+    box-shadow:0 0 10px rgba(255,220,140,.8);
+
+    animation:particleFloat linear infinite;
+
+}
+.hero-particles span:nth-child(1){
+
+    left:12%;
+    top:72%;
+    animation-duration:18s;
+    animation-delay:-2s;
+
+}
+
+.hero-particles span:nth-child(2){
+
+    left:24%;
+    top:65%;
+    animation-duration:22s;
+    animation-delay:-7s;
+
+}
+
+.hero-particles span:nth-child(3){
+
+    left:38%;
+    top:80%;
+    animation-duration:20s;
+    animation-delay:-5s;
+
+}
+
+.hero-particles span:nth-child(4){
+
+    left:52%;
+    top:68%;
+    animation-duration:24s;
+    animation-delay:-12s;
+
+}
+
+.hero-particles span:nth-child(5){
+
+    left:66%;
+    top:74%;
+    animation-duration:21s;
+    animation-delay:-9s;
+
+}
+
+.hero-particles span:nth-child(6){
+
+    left:78%;
+    top:60%;
+    animation-duration:26s;
+    animation-delay:-4s;
+
+}
+
+.hero-particles span:nth-child(7){
+
+    left:86%;
+    top:76%;
+    animation-duration:19s;
+    animation-delay:-10s;
+
+}
+
+.hero-particles span:nth-child(8){
+
+    left:94%;
+    top:70%;
+    animation-duration:23s;
+    animation-delay:-6s;
+
+}
+@keyframes particleFloat{
+
+    0%{
+
+        transform:translateY(25px);
+
+        opacity:0;
+
+    }
+
+    15%{
+
+        opacity:1;
+
+    }
+
+    85%{
+
+        opacity:1;
+
+    }
+
+    100%{
+
+        transform:translateY(-140px);
+
+        opacity:0;
+
+    }
+
+}
+.hero-light{
+
+    position:absolute;
+
+    top:-15%;
+
+    right:-10%;
+
+    width:70%;
+
+    height:120%;
+
+    pointer-events:none;
+
+    background:
+
+        radial-gradient(
+
+            circle,
+
+            rgba(255,229,170,.08),
+
+            rgba(255,229,170,.06) 35%,
+
+            transparent 70%
+
+        );
+
+    filter:blur(80px);
+
+    animation:lightPulse 10s ease-in-out infinite;
+
+    z-index:2;
+
+}
+@keyframes lightPulse{
+
+    0%,100%{
+
+        opacity:.65;
+
+        transform:scale(1);
+
+    }
+
+    50%{
+
+        opacity:.95;
+
+        transform:scale(1.04);
+
+    }
+
+}
+</style>

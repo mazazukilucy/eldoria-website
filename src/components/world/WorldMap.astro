@@ -1,0 +1,126 @@
+---
+import Section from "../ui/Section.astro";
+import Container from "../ui/Container.astro";
+---
+
+<Section
+    title="The Continent of Eldoria"
+    subtitle="One world. Seven regions."
+>
+
+    <Container>
+
+        <div class="map-frame">
+
+            <img
+                src="/images/maps/eldoria-atlas.webp"
+                alt="Map of Eldoria"
+                class="world-map"
+            />
+            <p class="map-caption">
+
+    The known continent of Eldoria, divided into seven great regions,
+    each shaped by its own history, rulers, and people.
+
+    </p>
+
+        </div>
+
+    </Container>
+
+</Section>
+
+<style>
+.map-caption{
+
+    margin-top:2rem;
+
+    text-align:center;
+
+    color:var(--muted);
+
+    line-height:1.9;
+
+    max-width:700px;
+
+    margin-inline:auto;
+
+}
+.map-frame{
+
+    position:relative;
+
+    padding:2rem;
+
+    border:1px solid rgba(198,166,107,.22);
+
+    border-radius:24px;
+
+    background:
+
+        linear-gradient(
+
+            180deg,
+
+            rgba(255,255,255,.04),
+
+            rgba(255,255,255,.02)
+
+        );
+
+    box-shadow:
+
+        0 25px 60px rgba(0,0,0,.45),
+
+        inset 0 1px 0 rgba(255,255,255,.05);
+
+    overflow:hidden;
+
+}
+.map-frame::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+        radial-gradient(
+
+            circle at top,
+
+            rgba(198,166,107,.05),
+
+            transparent 65%
+
+        );
+
+    pointer-events:none;
+
+}
+
+.world-map{
+
+    display:block;
+
+    width:100%;
+
+    border-radius:14px;
+
+    transition:
+
+        transform .6s ease,
+
+        filter .6s ease;
+
+}
+.map-frame:hover .world-map{
+
+    transform:scale(1.015);
+
+    filter:brightness(1.03);
+
+}
+</style>

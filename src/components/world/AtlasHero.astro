@@ -1,0 +1,109 @@
+---
+import Button from "../ui/Button.astro";
+---
+
+<section class="atlas-hero">
+    
+    <div class="atlas-overlay"></div>
+
+    <div class="atlas-content">
+<div class="atlas-divider">
+
+    ⚜
+
+</div>
+        <p class="eyebrow">
+            The Atlas
+        </p>
+
+        <h1>
+            Explore Eldoria
+        </h1>
+
+        <p>
+
+            Seven regions. One continent.
+            Every kingdom holds its own history,
+            rulers, cultures, and forgotten legends.
+
+        </p>
+
+        <Button href="#world-map">
+
+            Begin Your Journey
+
+        </Button>
+
+    </div>
+
+</section>
+
+<style>
+
+.atlas-hero{
+
+    position:relative;
+
+    min-height:65vh;
+
+    display:grid;
+
+    place-items:center;
+
+    text-align:center;
+
+}
+
+.atlas-content{
+
+    position:relative;
+
+    z-index:2;
+
+    max-width:800px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:2rem;
+
+}
+
+.atlas-overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+        radial-gradient(
+
+            circle,
+
+            rgba(198,166,107,.05),
+
+            transparent 70%
+
+        );
+
+}
+.atlas-divider{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    margin:5rem 0;
+
+    color:var(--primary);
+
+    font-size:2rem;
+
+    opacity:.6;
+
+}
+</style>

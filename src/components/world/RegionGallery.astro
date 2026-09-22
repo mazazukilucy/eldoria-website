@@ -1,0 +1,93 @@
+---
+interface Props{
+
+    images:string[];
+
+}
+
+const{
+
+    images
+
+}=Astro.props;
+---
+
+<section class="gallery">
+
+    {images.map((image)=>(
+        <img
+            src={image}
+            alt=""
+            loading="lazy"
+        />
+    ))}
+
+</section>
+
+<style>
+
+.gallery{
+
+    width:min(1400px,94%);
+
+    margin:-5rem auto 7rem;
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:1rem;
+
+    position:relative;
+
+    z-index:10;
+
+}
+
+.gallery img{
+
+    width:100%;
+
+    aspect-ratio:16/10;
+
+    object-fit:cover;
+
+    border-radius:18px;
+
+    border:1px solid rgba(198,166,107,.15);
+
+    transition:
+        transform .35s ease,
+        border-color .35s ease;
+
+}
+
+.gallery img:hover{
+
+    transform:translateY(-6px);
+
+    border-color:var(--primary);
+
+}
+
+@media(max-width:900px){
+
+.gallery{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+}
+
+@media(max-width:600px){
+
+.gallery{
+
+    grid-template-columns:1fr;
+
+}
+
+}
+
+</style>

@@ -1,0 +1,64 @@
+---
+import Layout from "../../layout/Layout.astro";
+import RegionOverview from "../../components/world/RegionOverview.astro";
+import RegionHero from "../../components/world/RegionHero.astro";
+import RegionGallery from "../../components/world/RegionGallery.astro";
+import RegionFacts from "../../components/world/RegionFacts.astro";
+import RegionRaces from "../../components/world/RegionRaces.astro";
+import RegionCities from "../../components/world/RegionCities.astro";
+import RegionLandmarks from "../../components/world/RegionLandmarks.astro";
+import RegionSpecter from "../../components/world/RegionSpecter.astro";
+import RegionGovernment from "../../components/world/RegionGovernment.astro";
+import RegionCulture from "../../components/world/RegionCulture.astro";
+import RegionGeography from "../../components/world/RegionGeography.astro";
+import RegionWildlife from "../../components/world/RegionWildlife.astro";
+import RegionFauna from "../../components/world/RegionFauna.astro";
+import RegionPlaces from "../../components/world/RegionPlaces.astro";
+import RegionLore from "../../components/world/RegionLore.astro";
+---
+
+<Layout title="Solmara | Eldoria">
+
+    <RegionHero
+
+        title="Solmara"
+
+        subtitle="The Golden Heartland"
+
+        image="/images/regions/solmara.webp"
+
+    />
+
+    <RegionGallery
+
+        images={[
+
+            "/images/regions/market.webp",
+
+            "/images/regions/valemore.webp",
+
+            "/images/regions/crown-road.webp",
+
+            "/images/regions/tree-of-gods.webp",
+
+            "/images/regions/nyxaras-rock.webp",
+
+            "/images/regions/cliffside.webp"
+
+        ]}
+
+    />
+    <RegionOverview />
+    <RegionFacts />
+    <RegionRaces />
+    <RegionCities />
+    <RegionLandmarks />
+    <RegionSpecter />
+    <RegionGovernment />
+    <RegionCulture />
+    <RegionGeography />
+    <RegionWildlife />
+    <RegionFauna />
+    <RegionPlaces />
+    <RegionLore />
+</Layout>

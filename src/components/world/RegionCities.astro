@@ -1,0 +1,207 @@
+---
+import RegionSection from "./RegionSection.astro";
+---
+
+<RegionSection
+
+    title="Major Cities"
+
+    subtitle="The great cities that shape the Golden Heartland."
+
+>
+
+<div class="city-grid">
+
+    <article class="city-card">
+
+        <img
+            src="/images/solmara/valemore.webp"
+            alt="Valemore"
+        />
+
+        <div class="content">
+
+            <p class="eyebrow">
+
+                City of Culture & Trade
+
+            </p>
+
+            <h3>
+
+                Valemore
+
+            </h3>
+
+            <p>
+
+                The capital of the Kingdom of Valemore and the cultural,
+                political, and commercial heart of Solmara.
+
+            </p>
+
+        </div>
+
+    </article>
+
+    <article class="city-card">
+
+        <img
+            src="/images/solmara/aurelis.webp"
+            alt="Aurelis"
+        />
+
+        <div class="content">
+
+            <p class="eyebrow">
+
+                City of Magical Advancement
+
+            </p>
+
+            <h3>
+
+                Aurelis
+
+            </h3>
+
+            <p>
+
+                Home to the Royal Academy of Aurelis and the continent's
+                greatest center of magical research.
+
+            </p>
+
+        </div>
+
+    </article>
+
+    <article class="city-card">
+
+        <img
+            src="/images/solmara/storgur.webp"
+            alt="Storgur"
+        />
+
+        <div class="content">
+
+            <p class="eyebrow">
+
+                Military City
+
+            </p>
+
+            <h3>
+
+                Storgur
+
+            </h3>
+
+            <p>
+
+                The military heart of Solmara where generations of soldiers,
+                knights, and commanders are trained.
+
+            </p>
+
+        </div>
+
+    </article>
+
+</div>
+
+</RegionSection>
+
+<style>
+
+.city-grid{
+
+    display:grid;
+
+    gap:2.5rem;
+
+}
+
+.city-card{
+
+    overflow:hidden;
+
+    border-radius:24px;
+
+    border:1px solid rgba(198,166,107,.15);
+
+    background:rgba(255,255,255,.03);
+
+    transition:.35s;
+
+}
+
+.city-card:hover{
+
+    transform:translateY(-8px);
+
+    border-color:var(--primary);
+
+    box-shadow:
+
+        0 20px 50px rgba(0,0,0,.35);
+
+}
+
+.city-card img{
+
+    width:100%;
+
+    height:340px;
+
+    object-fit:cover;
+
+    transition:transform .5s ease;
+
+}
+
+.city-card:hover img{
+
+    transform:scale(1.04);
+
+}
+
+.content{
+
+    padding:2.5rem;
+
+}
+
+.eyebrow{
+
+    color:var(--primary);
+
+    text-transform:uppercase;
+
+    letter-spacing:.3em;
+
+    font-size:.75rem;
+
+    margin-bottom:.75rem;
+
+}
+
+.content h3{
+
+    font-family:"Cinzel",serif;
+
+    font-size:2.5rem;
+
+    margin-bottom:1rem;
+
+}
+
+.content p{
+
+    color:var(--muted);
+
+    line-height:1.9;
+
+}
+
+</style>

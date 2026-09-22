@@ -1,0 +1,147 @@
+---
+import RegionSection from "./RegionSection.astro";
+---
+
+<RegionSection
+
+    title="Regional Specter"
+
+    subtitle="The guardian entrusted with watching over Solmara."
+
+>
+
+<div class="specter-card">
+
+    <div class="portrait">
+
+        <img
+            src="/images/specters/elowen.webp"
+            alt="Elowen Waslow"
+        />
+
+    </div>
+
+    <div class="info">
+
+        <p class="eyebrow">
+
+            Embodiment of Compassion
+
+        </p>
+
+        <h2>
+
+            Elowen Waslow
+
+        </h2>
+
+        <div class="details">
+
+            <span>Deer Beastkin</span>
+
+            <span>•</span>
+
+            <span>Specter of Solmara</span>
+
+        </div>
+
+        <p>
+
+            Elowen Waslow watches over the independent monarchies of
+            Solmara without governing them. Acting as a steward rather
+            than a ruler, she protects the balance of the region while
+            allowing every kingdom to determine its own future.
+
+        </p>
+
+    </div>
+
+</div>
+
+</RegionSection>
+
+<style>
+
+.specter-card{
+
+    display:grid;
+
+    grid-template-columns:350px 1fr;
+
+    gap:4rem;
+
+    align-items:center;
+
+}
+
+.portrait img{
+
+    width:100%;
+
+    border-radius:24px;
+
+    border:1px solid rgba(198,166,107,.2);
+
+}
+
+.info h2{
+
+    font-family:"Cinzel",serif;
+
+    font-size:3rem;
+
+    margin:1rem 0;
+
+}
+
+.eyebrow{
+
+    color:var(--primary);
+
+    text-transform:uppercase;
+
+    letter-spacing:.3em;
+
+    font-size:.8rem;
+
+}
+
+.details{
+
+    display:flex;
+
+    gap:1rem;
+
+    color:var(--muted);
+
+    margin-bottom:2rem;
+
+}
+
+.info p{
+
+    color:var(--muted);
+
+    line-height:2;
+
+}
+
+@media(max-width:900px){
+
+.specter-card{
+
+    grid-template-columns:1fr;
+
+    text-align:center;
+
+}
+
+.details{
+
+    justify-content:center;
+
+}
+
+}
+
+</style>

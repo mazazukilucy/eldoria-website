@@ -1,0 +1,184 @@
+---
+import Section from "../ui/Section.astro";
+import Button from "../ui/Button.astro";
+---
+
+<Section
+    title="A World Divided"
+    subtitle="Seven regions. One continent. Countless stories."
+>
+
+<div class="about-grid">
+
+    <div class="about-content">
+
+        <p>
+
+            Eldoria is a continent shaped by forgotten wars,
+            divine powers, and kingdoms that have risen and fallen
+            across thousands of years.
+
+        </p>
+
+        <p>
+
+            Every mountain range, every kingdom,
+            and every ruined city carries a story.
+
+            Some became legends.
+
+            Others were erased from history.
+
+        </p>
+
+        <Button href="/world">
+
+            Explore the Atlas
+
+        </Button>
+
+    </div>
+
+    <aside class="chronicle">
+
+        <span class="chronicle-title">
+
+            FROM THE CHRONICLES
+
+        </span>
+
+        <blockquote>
+
+            "History is not written by those who survive...
+
+            It is written by those who are remembered."
+
+        </blockquote>
+
+    </aside>
+
+</div>
+
+</Section>
+
+<style>
+
+.about-grid{
+
+    display:grid;
+
+    grid-template-columns:2fr 1fr;
+
+    gap:5rem;
+
+    align-items:center;
+
+}
+
+.about-content{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:2rem;
+
+}
+
+.about-content p{
+
+    font-size:1.1rem;
+
+    line-height:2;
+
+}
+
+.chronicle{
+
+    padding:2.5rem;
+
+    border:1px solid var(--border);
+
+    border-radius:12px;
+
+    background:
+
+        linear-gradient(
+
+            180deg,
+
+            rgba(24,20,17,.96),
+
+            rgba(16,13,11,.98)
+
+        );
+
+    position:relative;
+
+}
+
+.chronicle::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    border-radius:12px;
+
+    box-shadow:
+
+        inset 0 0 50px rgba(198,166,107,.05);
+
+    pointer-events:none;
+
+}
+
+.chronicle-title{
+
+    display:block;
+
+    color:var(--primary);
+
+    letter-spacing:.25em;
+
+    font-size:.8rem;
+
+    margin-bottom:1.5rem;
+
+}
+
+blockquote{
+
+    font-family:"Cinzel",serif;
+
+    font-size:1.5rem;
+
+    line-height:1.8;
+
+    font-style:italic;
+
+    color:var(--text);
+
+}
+
+@media(max-width:900px){
+
+.about-grid{
+
+    grid-template-columns:1fr;
+
+    gap:3rem;
+
+}
+
+.chronicle{
+
+    text-align:center;
+
+}
+
+}
+
+</style>
