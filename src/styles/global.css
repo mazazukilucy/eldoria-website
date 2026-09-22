@@ -82,6 +82,16 @@ html{
 
 body{
 
+    /*  Inter was being preloaded in the document head but never
+        applied, so all body copy fell back to the browser default
+        serif. */
+
+    font-family:"Inter","Helvetica Neue",Arial,sans-serif;
+
+    color:var(--text);
+
+    line-height:1.7;
+
     background:
 
         url("/images/textures/stone.webp")
@@ -205,7 +215,13 @@ img{
 
 }
 
-.fade-up{
+/*  Scroll-reveal animations are opt-in: the classes below only hide
+    content once reveal.js has confirmed it can run and has added
+    .reveal-ready to <html>. Without that guard a JS failure, an
+    unsupported browser, or a crawler fetching the page sees a blank
+    document, because every section starts at opacity:0. */
+
+:root.reveal-ready .fade-up{
 
     opacity:0;
 
@@ -226,7 +242,7 @@ img{
     transform:translateY(0);
 
 }
-.reveal{
+:root.reveal-ready .reveal{
 
     opacity:0;
 
@@ -245,6 +261,24 @@ img{
     opacity:1;
 
     transform:translateY(0);
+
+}
+
+/*  Readers who ask for reduced motion get the content, not the
+    travel. */
+
+@media(prefers-reduced-motion:reduce){
+
+    :root.reveal-ready .fade-up,
+    :root.reveal-ready .reveal{
+
+        opacity:1;
+
+        transform:none;
+
+        transition:none;
+
+    }
 
 }
 .parchment{
